@@ -10,9 +10,10 @@ import java.util.concurrent.Executors;
  */
 public class InsertData {
     public static void exec(List<String> list) throws InterruptedException{
-        int count = 300;                   //一个线程处理300条数据
+        int count = 1000;                   //一个线程处理1000条数据
         int listSize = list.size();        //数据集合大小
         int runSize = (listSize/count)+1;  //开启的线程数
+        System.out.println("当前线程数："+runSize);
         List<String> newlist = null;       //存放每个线程的执行数据
         //创建一个线程池，数量和开启线程的数量一样
         ExecutorService executor = Executors.newFixedThreadPool(runSize);
